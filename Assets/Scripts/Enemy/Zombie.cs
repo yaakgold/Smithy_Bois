@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,11 @@ public class Zombie : Enemy
 
         //Create states
         WanderState wander = new WanderState(this, timeBetweenChanges);
+        GoToPlayerState goToPlayerState = new GoToPlayerState(this, timeBetweenChanges);
 
         //Specific Transitions
-        
+        At(wander, goToPlayerState, checkPlayerInRange(), false);
+        At(goToPlayerState, wander, playerOutOfRange(), false);
 
         //Any Transitions
         
@@ -26,7 +29,21 @@ public class Zombie : Enemy
 
         //Method shortucts for transitions
         void At(IState from, IState to, Func<bool> condition, bool transitionToSelf) => _stateMachine.AddTransition(from, to, condition, transitionToSelf);
-        
+        Func<bool> checkPlayerInRange() => () =>
+        {
+            var hits = Physics2D.CircleCastAll(transform.position, detectionRange, Vector2.one).Where(x => x.transform.CompareTag("Player")).ToList();
+
+            if (hits.Count > 0 && hits[0].transform.gameObject.activeSelf == true)
+                target = hits[0].transform;
+            else
+                target = null;
+            return target != null;
+        };
+
+        Func<bool> playerOutOfRange() => () =>
+        {
+            return checkPlayerInRange().Invoke() == false;
+        };
     }
 
     public override void Update()
