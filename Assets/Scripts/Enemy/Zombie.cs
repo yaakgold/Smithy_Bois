@@ -7,6 +7,7 @@ using UnityEngine;
 public class Zombie : Enemy
 {
     public float timeBetweenChanges;
+    public Health health;
 
     private void Awake()
     {
@@ -46,11 +47,24 @@ public class Zombie : Enemy
         };
     }
 
+    private void Start()
+    {
+        health.OnDeath.AddListener(Die);
+    }
+
     public override void Update()
     {
         base.Update();
 
         //Movement stuff
         transform.position += (Vector3)moveDir * speed * Time.deltaTime;
+
+        health.TakeDamage(Time.deltaTime);
+    }
+
+    public void Die()
+    {
+        //TODO: Do more
+        Destroy(gameObject);
     }
 }
