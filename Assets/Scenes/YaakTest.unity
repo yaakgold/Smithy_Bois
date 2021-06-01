@@ -216,7 +216,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1007395717}
   - component: {fileID: 1007395718}
+  - component: {fileID: 1007395719}
   - component: {fileID: 1007395716}
+  - component: {fileID: 1007395720}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -307,6 +309,43 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0}
   target: {fileID: 0}
   timeBetweenChanges: 0.5
+  health: {fileID: 1007395719}
+--- !u!114 &1007395719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007395715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de525044449d634abcc2f2f394db801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!95 &1007395720
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007395715}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2111540b612529d4184e8efd7f24141f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1101595486
 GameObject:
   m_ObjectHideFlags: 0
