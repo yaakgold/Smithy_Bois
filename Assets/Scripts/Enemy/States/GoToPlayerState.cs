@@ -21,7 +21,7 @@ public class GoToPlayerState : IState
 
     public void OnExit()
     {
-        
+        enemy.moveDir = Vector2.zero;
     }
 
     public void Tick()
