@@ -26,14 +26,16 @@ public class GoToPlayerState : IState
 
     public void Tick()
     {
-        timeSinceLastChange -= Time.deltaTime;
-        
-        if(timeSinceLastChange <= 0)
-        {
-            timeSinceLastChange = timeBetweenChanges;
-            CalculateNewDir();
-        }
-        
+        //timeSinceLastChange -= Time.deltaTime;
+
+        //if(timeSinceLastChange <= 0)
+        //{
+        //    timeSinceLastChange = timeBetweenChanges;
+        //    CalculateNewDir();
+        //}
+
+        CalculateNewDir();
+
         enemy.moveDir = movDir;
     }
 

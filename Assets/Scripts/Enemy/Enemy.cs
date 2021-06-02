@@ -88,11 +88,8 @@ public class Enemy : MonoBehaviour
         transform.position += (Vector3)moveDir * speed * Time.deltaTime;
 
         //Animation stuff
-        anim.SetBool("IsWalkingRight", moveDir.x > 0);
-        anim.SetBool("IsWalkingLeft", moveDir.x < 0);
-
-        anim.SetBool("IsWalkingUp", moveDir.y > 0);
-        anim.SetBool("IsWalkingDown", moveDir.y < 0);
+        anim.SetFloat("MoveX", moveDir.x);
+        anim.SetFloat("MoveY", moveDir.y);
     }
 
     public void Die()
