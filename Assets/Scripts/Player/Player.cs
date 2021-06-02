@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
 
         playerDirection.x = Input.GetAxis("Horizontal");
         playerDirection.y = Input.GetAxis("Vertical");
+        animator.SetFloat("MoveX", playerDirection.x);
+        animator.SetFloat("MoveY", playerDirection.y);
 
         Vector3 velocity = playerDirection * Speed;
         transform.position += velocity * Time.deltaTime;
