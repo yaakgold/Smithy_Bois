@@ -77,11 +77,6 @@ public class Enemy : MonoBehaviour
         };
     }
 
-    private void Start()
-    {
-        
-    }
-
     public void Update()
     {
         if(!deathAdded)
@@ -105,7 +100,7 @@ public class Enemy : MonoBehaviour
 
     public void GetHit()
     {
-
+        anim.SetTrigger("GetHit");
     }
 
     public void Die()
@@ -117,5 +112,11 @@ public class Enemy : MonoBehaviour
 
         //Remove the gameobject from existence
         Destroy(gameObject);
+    }
+
+    public void TryToDoDamage()
+    {
+        //Do damage (maybe do a check thing to make sure you hit the player?
+        target.GetComponent<Player>().health.TakeDamage(strength);
     }
 }
