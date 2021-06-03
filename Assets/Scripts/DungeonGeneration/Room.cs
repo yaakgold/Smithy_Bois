@@ -11,6 +11,8 @@ public class Room : MonoBehaviour
 
     private bool updatedDoors = false;
 
+    Collider2D collider2D;
+
     public Room(int x, int y)
     {
         this.x = x;
@@ -79,8 +81,13 @@ public class Room : MonoBehaviour
                     break;
                 case Door.DoorType.right:
                     if (GetRight() == null)
+<<<<<<< HEAD
                         DisableDoor(door.gameObject);
                         //door.gameObject.SetActive(false);
+=======
+                        door.gameObject.SetActive(false);
+
+>>>>>>> a9b31ff704184564a0a26b1a41b18371ad564297
                     break;
                 case Door.DoorType.top:
                     if (GetTop() == null)
