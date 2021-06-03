@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4103386223210411991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,6 +59,7 @@ MonoBehaviour:
   anim: {fileID: 4103386223210411996}
   timeBetweenChanges: 1
   health: {fileID: 4103386223210411987}
+  room: {fileID: 0}
 --- !u!114 &4103386223210411987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +75,9 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHit:
     m_PersistentCalls:
       m_Calls: []
 --- !u!212 &4103386223210411984

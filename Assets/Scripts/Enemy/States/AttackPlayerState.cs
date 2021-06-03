@@ -42,9 +42,8 @@ public class AttackPlayerState : IState
     {
         Debug.Log("ATTACK!");
         //Animation here
+        enemy.anim.SetTrigger("Attack");
 
-
-        //Do damage (maybe do a check thing to make sure you hit the player?
-        player.health.TakeDamage(strength);
+        //Animation takes care of the actual damage
     }
 }
