@@ -19,20 +19,13 @@ public class Weapon : MonoBehaviour
     public float strengthModifier = 0.0f;
     public eWeaponType type = eWeaponType.Flamethrower;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Attack()
     {
         animator.SetTrigger("Attack");
+    }
+
+    public void DisableAnim()
+    {
+        animator.SetTrigger("StopFlame");
     }
 }
