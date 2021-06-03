@@ -13,10 +13,6 @@ public class CameraController : MonoBehaviour
         instance = this;
     }
 
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -46,5 +42,10 @@ public class CameraController : MonoBehaviour
         targetPos.z = transform.position.z;
 
         return targetPos;
+    }
+
+    public bool IsSwitchingScene()
+    {
+        return transform.position.Equals(GetCameraTargetPosition()) == false;
     }
 }
