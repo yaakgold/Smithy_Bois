@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     public float timeBetweenChanges;
     public Health health;
     public Room room;
+    public GameObject projectile;
 
     private bool deathAdded;
 
@@ -118,5 +119,10 @@ public class Enemy : MonoBehaviour
     {
         //Do damage (maybe do a check thing to make sure you hit the player?
         target.GetComponent<Player>().health.TakeDamage(strength);
+    }
+
+    public void RobotThrow()
+    {
+        Instantiate(projectile, transform.position, Quaternion.identity);
     }
 }
