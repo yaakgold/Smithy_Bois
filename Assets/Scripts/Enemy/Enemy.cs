@@ -77,16 +77,12 @@ public class Enemy : MonoBehaviour
         };
     }
 
-    private void Start()
-    {
-        
-    }
-
     public void Update()
     {
         if(!deathAdded)
         {
             health.OnDeath.AddListener(Die);
+            health.OnHit.AddListener(GetHit);
             deathAdded = true;
         }
 
@@ -102,6 +98,11 @@ public class Enemy : MonoBehaviour
         anim.SetFloat("MoveY", moveDir.y);
     }
 
+    public void GetHit()
+    {
+        anim.SetTrigger("GetHit");
+    }
+
     public void Die()
     {
         //TODO: Do more
@@ -111,5 +112,11 @@ public class Enemy : MonoBehaviour
 
         //Remove the gameobject from existence
         Destroy(gameObject);
+    }
+
+    public void TryToDoDamage()
+    {
+        //Do damage (maybe do a check thing to make sure you hit the player?
+        target.GetComponent<Player>().health.TakeDamage(strength);
     }
 }
