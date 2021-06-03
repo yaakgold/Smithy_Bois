@@ -74,22 +74,32 @@ public class Room : MonoBehaviour
             {
                 case Door.DoorType.left:
                     if (GetLeft() == null)
-                        door.gameObject.SetActive(false);
+                        DisableDoor(door.gameObject);
+                        //door.gameObject.SetActive(false);
                     break;
                 case Door.DoorType.right:
                     if (GetRight() == null)
-                        door.gameObject.SetActive(false);
+                        DisableDoor(door.gameObject);
+                        //door.gameObject.SetActive(false);
                     break;
                 case Door.DoorType.top:
                     if (GetTop() == null)
-                        door.gameObject.SetActive(false);
+                        DisableDoor(door.gameObject);
+                        //door.gameObject.SetActive(false);
                     break;
                 case Door.DoorType.bottom:
                     if (GetBottom() == null)
-                        door.gameObject.SetActive(false);
+                        DisableDoor(door.gameObject);
+                        //door.gameObject.SetActive(false);
                     break;
             }
         }
+    }
+
+    private void DisableDoor(GameObject door)
+    {
+        door.GetComponent<BoxCollider2D>().isTrigger = false;
+        door.GetComponentInChildren<SpriteRenderer>().enabled = false;
     }
 
     public Room GetRight()
