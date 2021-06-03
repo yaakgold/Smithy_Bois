@@ -87,6 +87,7 @@ public class Enemy : MonoBehaviour
         if(!deathAdded)
         {
             health.OnDeath.AddListener(Die);
+            health.OnHit.AddListener(GetHit);
             deathAdded = true;
         }
 
@@ -100,6 +101,11 @@ public class Enemy : MonoBehaviour
         //Animation stuff
         anim.SetFloat("MoveX", moveDir.x);
         anim.SetFloat("MoveY", moveDir.y);
+    }
+
+    public void GetHit()
+    {
+
     }
 
     public void Die()
