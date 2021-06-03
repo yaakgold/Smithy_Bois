@@ -8,11 +8,13 @@ public class Health : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public UnityEvent OnDeath;
+    public UnityEvent OnHit;
 
     private void Start()
     {
         currentHealth = maxHealth;
         OnDeath = new UnityEvent();
+        OnHit = new UnityEvent();
     }
 
     public float TakeDamage(float amt)
@@ -23,7 +25,11 @@ public class Health : MonoBehaviour
         {
             OnDeath.Invoke();
         }
-
+        else
+        {
+            OnHit.Invoke();
+        }
+        
         return currentHealth;
     }
 }
