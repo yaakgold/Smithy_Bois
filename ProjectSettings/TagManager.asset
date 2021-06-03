@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [Enemy, SpawnPoint, Rooms]
+  tags:
+  - Enemy
+  - SpawnPoint
+  - Rooms
+  - Cm Main
   layers:
   - Default
   - TransparentFX
@@ -40,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Door
+    uniqueID: 137727619
     locked: 0
