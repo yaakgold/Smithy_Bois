@@ -23,5 +23,10 @@ public class WeaponSpawner : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         weaponSprite.enabled = false;
+        if(other.GetType() == weapon.GetType())
+        {
+            weapon.isEquipped = true;
+            
+        }
     }
 }
