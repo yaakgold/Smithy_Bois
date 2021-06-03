@@ -20,20 +20,36 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        transform.Rotate(Vector3.forward, speed * Time.deltaTime);
+        transform.Rotate(Vector3.forward, speed);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if(collision.gameObject.CompareTag(tagHit))
+    //    {
+    //        if(collision.gameObject.TryGetComponent(out Health h))
+    //        {
+    //            h.TakeDamage(damage);
+    //        }
+    //    }
+        
+    //    if(!collision.gameObject.CompareTag(tagIgnore))
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag(tagHit))
+        if (collision.CompareTag(tagHit))
         {
-            if(collision.gameObject.TryGetComponent(out Health h))
+            if (collision.TryGetComponent(out Health h))
             {
                 h.TakeDamage(damage);
             }
         }
-        
-        if(!collision.gameObject.CompareTag(tagIgnore))
+
+        if (!collision.CompareTag(tagIgnore) && !collision.CompareTag("Untagged"))
         {
             Destroy(gameObject);
         }
