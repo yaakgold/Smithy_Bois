@@ -15,11 +15,6 @@ public class Health : MonoBehaviour
         OnDeath = new UnityEvent();
     }
 
-    public void Attack()
-    {
-
-    }
-
     public float TakeDamage(float amt)
     {
         currentHealth -= amt;

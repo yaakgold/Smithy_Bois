@@ -21,19 +21,21 @@ public class GoToPlayerState : IState
 
     public void OnExit()
     {
-        
+        enemy.moveDir = Vector2.zero;
     }
 
     public void Tick()
     {
-        timeSinceLastChange -= Time.deltaTime;
-        
-        if(timeSinceLastChange <= 0)
-        {
-            timeSinceLastChange = timeBetweenChanges;
-            CalculateNewDir();
-        }
-        
+        //timeSinceLastChange -= Time.deltaTime;
+
+        //if(timeSinceLastChange <= 0)
+        //{
+        //    timeSinceLastChange = timeBetweenChanges;
+        //    CalculateNewDir();
+        //}
+
+        CalculateNewDir();
+
         enemy.moveDir = movDir;
     }
 
