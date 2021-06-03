@@ -6,10 +6,12 @@ public class Player : MonoBehaviour
 {
     public Animator animator;
     public Health health;
+    public Weapon weapon = new Weapon();
     public float Speed { get; set; } = 5.0f;
     public float Strength { get; set; } = 1.0f;
     public Transform attackPoint;
     private float attackReach = 2.0f;
+    private float attackSpeed = 2.0f;
     private Vector3 playerDirection;
 
     void Start()
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
     {
         //play attack animation
         animator.SetTrigger("Attack");
+
         Collider2D[] collidingEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackReach);
         foreach(Collider2D enemy in collidingEnemies)
         {
@@ -47,6 +50,13 @@ public class Player : MonoBehaviour
                 h.TakeDamage(Strength);
             }
         }
+
+        weapon.DisableAnim();
+    }
+
+    public void AttackAnim()
+    {
+        weapon.Attack();
     }
 
     public void Die()

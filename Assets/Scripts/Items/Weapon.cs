@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    //public Animator animator;
-    public bool isEquipped = false;
-    public float AttackRange { get; set; } = 0.0f;
-    public float AttackSpeed { get; set; } = 0.0f;
-    public float StrengthModifier { get; set; } = 0.0f;
-
-    // Start is called before the first frame update
-    void Start()
+    public enum eWeaponType
     {
-        
+        Flamethrower,
+        Pickaxe,
+        Slingshot,
+        Sword
     }
 
-    // Update is called once per frame
-    void Update()
+    public Animator animator;
+    public bool isEquipped = false;
+    public float attackRange = 0.0f;
+    public float attackSpeed = 0.0f;
+    public float strengthModifier = 0.0f;
+    public eWeaponType type = eWeaponType.Flamethrower;
+
+    public void Attack()
     {
-        
+        animator.SetTrigger("Attack");
+    }
+
+    public void DisableAnim()
+    {
+        animator.SetTrigger("StopFlame");
     }
 }
