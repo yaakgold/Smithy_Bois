@@ -20,6 +20,9 @@ public class Enemy : MonoBehaviour
 
     public float timeBetweenChanges;
     public Health health;
+    public Room room;
+
+    private bool deathAdded;
 
     private void Awake()
     {
@@ -38,6 +41,7 @@ public class Enemy : MonoBehaviour
         At(attackPlayerState, goToPlayerState, notCloseEnoughToAttack(), false);
 
         //Any Transitions
+        _stateMachine.AddAnyTransition(wander, () => target == null, false);
 
         //Set State to wander
         _stateMachine.SetState(wander);
@@ -75,11 +79,17 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        health.OnDeath.AddListener(Die);
+        
     }
 
     public void Update()
     {
+        if(!deathAdded)
+        {
+            health.OnDeath.AddListener(Die);
+            deathAdded = true;
+        }
+
         _stateMachine.Tick();
 
         currentState = _stateMachine._currentState.ToString();
@@ -95,6 +105,11 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         //TODO: Do more
+
+        //Remove the gameobject from the list in the room
+        room.enemiesInRoom.Remove(gameObject);
+
+        //Remove the gameobject from existence
         Destroy(gameObject);
     }
 }

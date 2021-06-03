@@ -9,9 +9,10 @@ public class Room : MonoBehaviour
     public int x;
     public int y;
 
-    private bool updatedDoors = false;
+    public List<GameObject> enemiesInRoom = new List<GameObject>();
+    public List<ESpawner> eSpawners = new List<ESpawner>();
 
-    Collider2D collider2D;
+    private bool updatedDoors = false;
 
     public Room(int x, int y)
     {
@@ -66,6 +67,46 @@ public class Room : MonoBehaviour
             RemoveUnconnectedDoors();
             updatedDoors = true;
         }
+
+        if (enemiesInRoom.Count > 0)
+        {
+            //There are still enemies
+            StartCoroutine(LockRoom());
+        }
+        else
+        {
+            ReAddDoors();
+        }
+    }
+
+    public void ReAddDoors()
+    {
+        foreach (Door door in doors)
+        {
+            switch (door.doorType)
+            {
+                case Door.DoorType.left:
+                    if (GetLeft() != null)
+                        SetDoor(door.gameObject, true);
+                    //door.gameObject.SetActive(false);
+                    break;
+                case Door.DoorType.right:
+                    if (GetRight() != null)
+                        SetDoor(door.gameObject, true);
+                    //door.gameObject.SetActive(false);
+                    break;
+                case Door.DoorType.top:
+                    if (GetTop() != null)
+                        SetDoor(door.gameObject, true);
+                    //door.gameObject.SetActive(false);
+                    break;
+                case Door.DoorType.bottom:
+                    if (GetBottom() != null)
+                        SetDoor(door.gameObject, true);
+                    //door.gameObject.SetActive(false);
+                    break;
+            }
+        }
     }
 
     public void RemoveUnconnectedDoors()
@@ -76,37 +117,43 @@ public class Room : MonoBehaviour
             {
                 case Door.DoorType.left:
                     if (GetLeft() == null)
-                        DisableDoor(door.gameObject);
+                        SetDoor(door.gameObject, false);
                         //door.gameObject.SetActive(false);
                     break;
                 case Door.DoorType.right:
                     if (GetRight() == null)
-<<<<<<< HEAD
-                        DisableDoor(door.gameObject);
+                        SetDoor(door.gameObject, false);
                         //door.gameObject.SetActive(false);
-=======
-                        door.gameObject.SetActive(false);
-
->>>>>>> a9b31ff704184564a0a26b1a41b18371ad564297
                     break;
                 case Door.DoorType.top:
                     if (GetTop() == null)
-                        DisableDoor(door.gameObject);
+                        SetDoor(door.gameObject, false);
                         //door.gameObject.SetActive(false);
                     break;
                 case Door.DoorType.bottom:
                     if (GetBottom() == null)
-                        DisableDoor(door.gameObject);
+                        SetDoor(door.gameObject, false);
                         //door.gameObject.SetActive(false);
                     break;
             }
         }
     }
 
-    private void DisableDoor(GameObject door)
+    private void SetDoor(GameObject door, bool active)
     {
-        door.GetComponent<BoxCollider2D>().isTrigger = false;
-        door.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        door.GetComponent<BoxCollider2D>().isTrigger = active;
+        door.GetComponentInChildren<SpriteRenderer>().enabled = active;
+    }
+
+    IEnumerator LockRoom()
+    {
+        yield return new WaitForSeconds(1f);
+
+        foreach (var door in doors)
+        {
+            door.GetComponent<BoxCollider2D>().isTrigger = false;
+            door.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        }
     }
 
     public Room GetRight()
@@ -159,6 +206,10 @@ public class Room : MonoBehaviour
         if(other.tag == "Player")
         {
             RoomController.instance.OnPlayerEnterRoom(this);
+            foreach (var item in eSpawners)
+            {
+                item.isChosen = true;
+            }
         }
     }
 }
