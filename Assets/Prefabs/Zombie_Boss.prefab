@@ -94,9 +94,10 @@ MonoBehaviour:
   projectile: {fileID: 0}
   fireSpeed: 0
   enemyName: Zombie
-  isBoss: 0
+  isBoss: 1
   particleAttack: {fileID: 5123976169581472834, guid: 943ce053abd587444af8d1a993a026c6, type: 3}
   particleLocation: {fileID: 1753820702}
+  coins: []
 --- !u!114 &2534228579921628314
 MonoBehaviour:
   m_ObjectHideFlags: 0

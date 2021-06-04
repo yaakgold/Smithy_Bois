@@ -8,6 +8,7 @@ TagManager:
   - SpawnPoint
   - Rooms
   - Cm Main
+  - WinPanel
   layers:
   - Default
   - TransparentFX

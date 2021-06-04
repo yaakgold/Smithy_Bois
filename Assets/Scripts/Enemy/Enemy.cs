@@ -126,8 +126,10 @@ public class Enemy : MonoBehaviour
         if(isBoss)
         {
             //TODO: Something for when the player wins
-            
+
             //automatically give player X number of coins
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().Coins += 100;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().WinScreen();
         }
         else
         {
@@ -141,7 +143,7 @@ public class Enemy : MonoBehaviour
 
     public void TryToDoDamage()
     {
-        //Do damage (maybe do a check thing to make sure you hit the player?
+        if (!target) return;
         target.GetComponent<Player>().health.TakeDamage(strength);
         AudioManager.Instance.Play($"{enemyName} Attack");
     }
