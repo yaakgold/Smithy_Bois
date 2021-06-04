@@ -56,13 +56,16 @@ public class Player : MonoBehaviour
         transform.position += velocity * Time.deltaTime;
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.name.Contains("Drill"))
         {
             if(Input.GetKeyDown(KeyCode.E) && !weaponActive)
             {
                 drill.SetActive(true);
+                flamethrower.SetActive(false);
+                pickaxe.SetActive(false);
+                sword.SetActive(false);
                 weaponActive = true;
                 weapon = drill.GetComponent<Weapon>();
             }
@@ -71,6 +74,9 @@ public class Player : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E) && !weaponActive)
             {
                 flamethrower.SetActive(true);
+                drill.SetActive(false);
+                pickaxe.SetActive(false);
+                sword.SetActive(false);
                 weaponActive = true;
                 weapon = flamethrower.GetComponent<Weapon>();
             }
@@ -79,6 +85,9 @@ public class Player : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E) && !weaponActive)
             {
                 pickaxe.SetActive(true);
+                drill.SetActive(false);
+                flamethrower.SetActive(false);
+                sword.SetActive(false);
                 weaponActive = true;
                 weapon = pickaxe.GetComponent<Weapon>();
             }
@@ -87,6 +96,9 @@ public class Player : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E) && !weaponActive)
             {
                 sword.SetActive(true);
+                drill.SetActive(false);
+                flamethrower.SetActive(false);
+                pickaxe.SetActive(false);
                 weaponActive = true;
                 weapon = sword.GetComponent<Weapon>();
             }
@@ -120,6 +132,7 @@ public class Player : MonoBehaviour
 
     public void DrillCheck()
     {
+        if (!weapon) return;
         if(weapon.type == Weapon.eWeaponType.Drill)
         {
             DrillShoot();
