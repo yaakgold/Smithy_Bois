@@ -45,23 +45,41 @@ public class Player : MonoBehaviour
         Collider2D[] collidingEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackReach);
         foreach(Collider2D enemy in collidingEnemies)
         {
-            if(enemy.TryGetComponent(out Health h))
+            if(enemy.TryGetComponent(out Health h) && enemy.gameObject != gameObject)
             {
                 h.TakeDamage(Strength);
             }
         }
 
-        weapon.DisableAnim();
+        if(weapon != null) weapon.DisableAnim();
     }
 
     public void AttackAnim()
     {
-        weapon.Attack();
+        if (weapon != null) weapon.Attack();
     }
 
     public void Die()
     {
         //add stuff here for visuals :)
         Destroy(gameObject);
+    }
+
+    public void ChooseWeapon(Weapon weapon)
+    {
+        switch (weapon.type)
+        {
+            case Weapon.eWeaponType.Drill:
+
+                break;
+            case Weapon.eWeaponType.Flamethrower:
+                break;
+            case Weapon.eWeaponType.Pickaxe:
+                break;
+            case Weapon.eWeaponType.Sword:
+                break;
+            default:
+                break;
+        }
     }
 }

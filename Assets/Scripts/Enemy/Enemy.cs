@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     public Health health;
     public Room room;
     public GameObject projectile;
+    public float fireSpeed;
 
     private bool deathAdded;
 
@@ -123,6 +124,9 @@ public class Enemy : MonoBehaviour
 
     public void RobotThrow()
     {
-        Instantiate(projectile, transform.position, Quaternion.identity);
+        if(target)
+        {
+            Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>().Fire(fireSpeed, target, strength, target.tag, tag);
+        }
     }
 }

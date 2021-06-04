@@ -60,6 +60,8 @@ MonoBehaviour:
   timeBetweenChanges: 2.5
   health: {fileID: 8972379880818453259}
   room: {fileID: 0}
+  projectile: {fileID: 44385540847731815, guid: a9e87f2656d6c7f499ccf89313c69e2c, type: 3}
+  fireSpeed: 5
 --- !u!114 &8972379880818453259
 MonoBehaviour:
   m_ObjectHideFlags: 0

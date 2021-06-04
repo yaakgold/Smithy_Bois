@@ -6,9 +6,9 @@ public class Weapon : MonoBehaviour
 {
     public enum eWeaponType
     {
+        Drill,
         Flamethrower,
         Pickaxe,
-        Slingshot,
         Sword
     }
 
