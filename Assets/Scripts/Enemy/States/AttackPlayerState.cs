@@ -7,13 +7,13 @@ public class AttackPlayerState : IState
     public Enemy enemy;
     public Player player;
     public float timeBetweenAttacks;
-    public float timeSinceLastAttack;
+    public float timeSinceLastAttack = 0;
     public float strength;
 
     public AttackPlayerState(Enemy _enemy, float _timeBetween, float _strength)
     {
         enemy = _enemy;
-        timeBetweenAttacks = timeSinceLastAttack = _timeBetween;
+        timeBetweenAttacks = _timeBetween;
         strength = _strength;
     }
 
