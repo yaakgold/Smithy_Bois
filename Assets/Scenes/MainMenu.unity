@@ -455,7 +455,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770498387}
+      - m_Target: {fileID: 158927829}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Select Button
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 194695288}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -465,7 +477,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 194695288}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -915,6 +927,136 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136089793}
   m_CullTransparentMesh: 1
+--- !u!1 &158927828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 158927830}
+  - component: {fileID: 158927829}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &158927829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158927828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0214c67e5a4cf814293f2d65dcf9ef12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  empty: {fileID: 6215796396843127704, guid: 61d5cd3ee3a6a1247b5945873807431e, type: 3}
+  sounds:
+  - name: Select Button
+    clip: {fileID: 8300000, guid: 9acf2fd169939014ba8507462a8028b9, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Zombie Attack
+    clip: {fileID: 8300000, guid: 640994911e732a4429d4edf0595270c0, type: 3}
+    vol: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: Zombie Die
+    clip: {fileID: 8300000, guid: a1f7251372bd2cf4dbc11c8fd8cc29f2, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Zombie Get Hit
+    clip: {fileID: 8300000, guid: 9617a773ff852e7478aa2601396b0494, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Robot Attack
+    clip: {fileID: 8300000, guid: 13681b2cb0fdf8e4183e877fe73a2b80, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Robot Die
+    clip: {fileID: 8300000, guid: b8d6d0ea792784249abe9e0583c633f0, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Robot Get Hit
+    clip: {fileID: 8300000, guid: fb7c91cc0e62f5d41978ace00ae48d59, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Robot Proj Hit
+    clip: {fileID: 8300000, guid: 0ad21c71a9c863347b58ee60ff01b94e, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Drill Attack
+    clip: {fileID: 8300000, guid: 077efda8004d2fe42bb9932d49881694, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Drill Proj Hit
+    clip: {fileID: 8300000, guid: d6b862c8e03fdac4094f11ef3b1f0cf4, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Flamethrower
+    clip: {fileID: 8300000, guid: d567d4674bf79394baee9b57031b6cf2, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Pickaxe Attack
+    clip: {fileID: 8300000, guid: 1823e9dd45cb5494da1392aecdad6be0, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Pickaxe Hit
+    clip: {fileID: 8300000, guid: ccb05de389472b5418a2035943688c1c, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Player Die
+    clip: {fileID: 8300000, guid: d4f8c23df742b69498aa91f2a8ada9a2, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Player Get Hit
+    clip: {fileID: 8300000, guid: 48c5f35fcc309014e9aa68da29869065, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Sword Attack
+    clip: {fileID: 8300000, guid: f921fb0f3267b9e418fc2af5841e4da2, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Sword Hit
+    clip: {fileID: 8300000, guid: 46a7f5fb53e769244b71161ea09caba2, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
+--- !u!4 &158927830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158927828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &183535198
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,6 +1140,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 158927829}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Select Button
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 194695290}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayGame
@@ -1727,7 +1881,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1321040622}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 158927829}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Select Button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &515726054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2007,6 +2173,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 158927829}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Select Button
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &564382182
@@ -2819,7 +2997,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 60801572}
+      - m_Target: {fileID: 158927829}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Select Button
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 194695288}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2829,7 +3019,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 194695288}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -5453,6 +5643,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 158927829}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Select Button
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2022516918

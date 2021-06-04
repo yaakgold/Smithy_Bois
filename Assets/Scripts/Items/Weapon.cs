@@ -22,6 +22,8 @@ public class Weapon : MonoBehaviour
     public void Attack()
     {
         animator.SetTrigger("Attack");
+        //Play death audio
+        AudioManager.Instance.Play($"{type} Attack");
     }
 
     public void DisableAnim()

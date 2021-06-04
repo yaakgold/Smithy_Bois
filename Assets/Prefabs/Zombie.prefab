@@ -60,6 +60,9 @@ MonoBehaviour:
   timeBetweenChanges: 1
   health: {fileID: 4103386223210411987}
   room: {fileID: 0}
+  projectile: {fileID: 0}
+  fireSpeed: 0
+  enemyName: Zombie
 --- !u!114 &4103386223210411987
 MonoBehaviour:
   m_ObjectHideFlags: 0

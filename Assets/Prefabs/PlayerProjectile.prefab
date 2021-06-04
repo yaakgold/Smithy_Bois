@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5391323233105790588}
   - component: {fileID: 7874068756059198057}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: PlayerProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4398856a6ffb8854aaaf06c9b6a30f55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcc86e73aa1005d4593fa47feed6e618, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531e66fa7201d044bad2e6d93a93c42e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwerName: Drill
   damage: 0
   tagHit: 
   tagIgnore: 

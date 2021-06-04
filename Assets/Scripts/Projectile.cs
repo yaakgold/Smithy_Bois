@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public string throwerName;
     public float damage;
     public string tagHit, tagIgnore;
     public float speed;
@@ -23,22 +24,6 @@ public class Projectile : MonoBehaviour
         transform.Rotate(Vector3.forward, speed);
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if(collision.gameObject.CompareTag(tagHit))
-    //    {
-    //        if(collision.gameObject.TryGetComponent(out Health h))
-    //        {
-    //            h.TakeDamage(damage);
-    //        }
-    //    }
-        
-    //    if(!collision.gameObject.CompareTag(tagIgnore))
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(tagHit))
@@ -51,6 +36,7 @@ public class Projectile : MonoBehaviour
 
         if (!collision.CompareTag(tagIgnore) && !collision.CompareTag("Untagged"))
         {
+            AudioManager.Instance.Play($"{throwerName} Proj Hit");
             Destroy(gameObject);
         }
     }

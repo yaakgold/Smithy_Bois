@@ -48,6 +48,9 @@ public class Player : MonoBehaviour
             if(enemy.TryGetComponent(out Health h) && enemy.gameObject != gameObject)
             {
                 h.TakeDamage(Strength);
+
+                if(weapon != null)
+                    AudioManager.Instance.Play($"{weapon.type} Hit");
             }
         }
 
