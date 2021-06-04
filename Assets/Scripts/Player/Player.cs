@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     private float attackReach = 2.0f;
     private float attackSpeed = 2.0f;
+    private float timeSinceLastAttack = 0;
     private Vector3 playerDirection;
 
     void Start()
@@ -42,9 +43,13 @@ public class Player : MonoBehaviour
     {
         playerDirection = Vector3.zero;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Attack();
+        timeSinceLastAttack -= Time.deltaTime;
+        if (timeSinceLastAttack <= 0) {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Attack();
+                timeSinceLastAttack = attackSpeed;
+            }
         }
      
         playerDirection.x = Input.GetAxis("Horizontal");
