@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public Health health;
     public GameObject drill, flamethrower, pickaxe, sword;
+    public Projectile projectile;
     public Transform attackPoint;
     public bool weaponActive;
     public Weapon weapon = new Weapon();
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour
             {
                 drill.SetActive(true);
                 weaponActive = true;
-                weapon.type = Weapon.eWeaponType.Drill;
+                weapon = drill.GetComponent<Weapon>();
             }
         } else if(collision.gameObject.name.Contains("Flamethrower"))
         {
@@ -71,7 +72,7 @@ public class Player : MonoBehaviour
             {
                 flamethrower.SetActive(true);
                 weaponActive = true;
-                weapon.type = Weapon.eWeaponType.Flamethrower;
+                weapon = flamethrower.GetComponent<Weapon>();
             }
         } else if(collision.gameObject.name.Contains("Pickaxe"))
         {
@@ -79,7 +80,7 @@ public class Player : MonoBehaviour
             {
                 pickaxe.SetActive(true);
                 weaponActive = true;
-                weapon.type = Weapon.eWeaponType.Pickaxe;
+                weapon = pickaxe.GetComponent<Weapon>();
             }
         } else if(collision.gameObject.name.Contains("Sword"))
         {
@@ -87,7 +88,7 @@ public class Player : MonoBehaviour
             {
                 sword.SetActive(true);
                 weaponActive = true;
-                weapon.type = Weapon.eWeaponType.Sword;
+                weapon = sword.GetComponent<Weapon>();
             }
         }
     }
@@ -115,6 +116,20 @@ public class Player : MonoBehaviour
     public void AttackAnim()
     {
         if (weapon != null) weapon.Attack();
+    }
+
+    public void DrillCheck()
+    {
+        if(weapon.type == Weapon.eWeaponType.Drill)
+        {
+            DrillShoot();
+        }
+    }
+
+    public void DrillShoot()
+    {
+        Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>().Fire(attackSpeed, attackPoint, Strength, "Enemy", "Player");
+        AudioManager.Instance.Play("Drill Attack");
     }
 
     public void Die()
