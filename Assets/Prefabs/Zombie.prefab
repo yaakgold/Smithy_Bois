@@ -97,6 +97,13 @@ MonoBehaviour:
   isBoss: 0
   particleAttack: {fileID: 5123976169581472834, guid: 943ce053abd587444af8d1a993a026c6, type: 3}
   particleLocation: {fileID: 4838842518540179915}
+  coins:
+  - {fileID: 416726788770727581, guid: 2b509a823ff45db4a8c358f0e3c5e0e1, type: 3}
+  - {fileID: 416726788770727581, guid: 2b509a823ff45db4a8c358f0e3c5e0e1, type: 3}
+  - {fileID: 416726788770727581, guid: 2b509a823ff45db4a8c358f0e3c5e0e1, type: 3}
+  - {fileID: 7320913020171335808, guid: c021e953226987242a2265c7239ab6cf, type: 3}
+  - {fileID: 7320913020171335808, guid: c021e953226987242a2265c7239ab6cf, type: 3}
+  - {fileID: 6855507186552700590, guid: 3767dd9aa0be64242ae880b011b4f7db, type: 3}
 --- !u!114 &4103386223210411987
 MonoBehaviour:
   m_ObjectHideFlags: 0

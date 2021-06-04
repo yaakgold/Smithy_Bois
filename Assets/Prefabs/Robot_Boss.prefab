@@ -94,9 +94,10 @@ MonoBehaviour:
   projectile: {fileID: 44385540847731815, guid: a9e87f2656d6c7f499ccf89313c69e2c, type: 3}
   fireSpeed: 2
   enemyName: Robot
-  isBoss: 0
+  isBoss: 1
   particleAttack: {fileID: 5123976169581472834, guid: 42e3f5adf2355a3438605bc988079ba6, type: 3}
   particleLocation: {fileID: 781243883}
+  coins: []
 --- !u!114 &6112963271450385620
 MonoBehaviour:
   m_ObjectHideFlags: 0
