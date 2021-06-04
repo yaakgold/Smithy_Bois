@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour
     public string enemyName;
 
     public bool isBoss;
+    public GameObject particleAttack;
+    public Transform particleLocation;
 
     private bool deathAdded;
 
@@ -144,5 +146,10 @@ public class Enemy : MonoBehaviour
             Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>().Fire(fireSpeed, target, strength, target.tag, tag);
             AudioManager.Instance.Play($"{enemyName} Attack");
         }
+    }
+
+    public void CreateParticles()
+    {
+        Instantiate(particleAttack, particleLocation.position, Quaternion.identity);
     }
 }
