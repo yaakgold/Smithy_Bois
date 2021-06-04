@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     public float Strength { get; set; } = 1.0f;
 
     private float attackReach = 2.0f;
-    private float attackSpeed = .5f;
+    private float attackSpeed = 2.0f;
     private float timeSinceLastAttack = 0;
     private Vector3 playerDirection;
 
