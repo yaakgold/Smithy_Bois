@@ -22,10 +22,17 @@ public class Player : MonoBehaviour
     {
         health.OnDeath.AddListener(Die);
 
-        drill.SetActive(false);
-        flamethrower.SetActive(false);
-        pickaxe.SetActive(false);
-        sword.SetActive(false);
+        if(drill)
+            drill.SetActive(false);
+
+        if(flamethrower)
+            flamethrower.SetActive(false);
+
+        if(pickaxe)
+            pickaxe.SetActive(false);
+
+        if(sword)
+            sword.SetActive(false);
 
         weaponActive = false;
     }
@@ -39,6 +46,7 @@ public class Player : MonoBehaviour
             Attack();
         }
 
+     
         playerDirection.x = Input.GetAxis("Horizontal");
         playerDirection.y = Input.GetAxis("Vertical");
         animator.SetFloat("MoveX", playerDirection.x);

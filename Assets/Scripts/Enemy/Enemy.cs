@@ -25,6 +25,10 @@ public class Enemy : MonoBehaviour
     public float fireSpeed;
     public string enemyName;
 
+    public bool isBoss;
+    public GameObject particleAttack;
+    public Transform particleLocation;
+
     private bool deathAdded;
 
     private void Awake()
@@ -117,6 +121,13 @@ public class Enemy : MonoBehaviour
         //Play death audio
         AudioManager.Instance.Play($"{enemyName} Die");
 
+        //If is boss, do end game, win
+        if(isBoss)
+        {
+            //TODO: Something for when the player wins
+            print("YOU WIN");
+        }
+
         //Remove the gameobject from existence
         Destroy(gameObject);
     }
@@ -135,5 +146,10 @@ public class Enemy : MonoBehaviour
             Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>().Fire(fireSpeed, target, strength, target.tag, tag);
             AudioManager.Instance.Play($"{enemyName} Attack");
         }
+    }
+
+    public void CreateParticles()
+    {
+        Instantiate(particleAttack, particleLocation.position, Quaternion.identity);
     }
 }
