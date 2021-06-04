@@ -1794,7 +1794,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3933,7 +3933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1688743034917737798, guid: 8018e3b3e7db06944b0ea6fcd9c3c32b, type: 3}
       propertyPath: attackSpeed
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1688743034917737798, guid: 8018e3b3e7db06944b0ea6fcd9c3c32b, type: 3}
       propertyPath: strengthModifier
@@ -4099,7 +4099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3263064121824539779, guid: 905be7d6a9f366843baafca043433cf4, type: 3}
       propertyPath: attackSpeed
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3263064121824539779, guid: 905be7d6a9f366843baafca043433cf4, type: 3}
       propertyPath: strengthModifier
@@ -4191,6 +4191,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1642669120}
+    - target: {fileID: 3849868437461656706, guid: 9f073e7941fcd7641b967d9532e3f374, type: 3}
+      propertyPath: attackSpeed
+      value: 0.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f073e7941fcd7641b967d9532e3f374, type: 3}
 --- !u!1 &3849868438181197405 stripped
@@ -4281,6 +4285,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1642669120}
+    - target: {fileID: 6596089760260944619, guid: f2c5dfdc60dabd44195103661328852d, type: 3}
+      propertyPath: attackSpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c5dfdc60dabd44195103661328852d, type: 3}
 --- !u!1 &6596089759184751683 stripped
