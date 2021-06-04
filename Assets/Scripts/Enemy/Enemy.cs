@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour
     public float fireSpeed;
     public string enemyName;
 
+    public bool isBoss;
+
     private bool deathAdded;
 
     private void Awake()
@@ -116,6 +118,13 @@ public class Enemy : MonoBehaviour
 
         //Play death audio
         AudioManager.Instance.Play($"{enemyName} Die");
+
+        //If is boss, do end game, win
+        if(isBoss)
+        {
+            //TODO: Something for when the player wins
+            print("YOU WIN");
+        }
 
         //Remove the gameobject from existence
         Destroy(gameObject);

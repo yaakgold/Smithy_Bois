@@ -9,6 +9,9 @@ public class Room : MonoBehaviour
     public int x;
     public int y;
 
+    public int minSpawners = 3;
+    public int maxSpawners;
+
     public List<GameObject> enemiesInRoom = new List<GameObject>();
     public List<ESpawner> eSpawners = new List<ESpawner>();
 
@@ -207,9 +210,9 @@ public class Room : MonoBehaviour
         {
             RoomController.instance.OnPlayerEnterRoom(this);
 
-            if (eSpawners.Count < 3)
+            if (eSpawners.Count < minSpawners)
                 return;
-            int randSpawners = Random.Range(3, eSpawners.Count);
+            int randSpawners = Random.Range(minSpawners, Mathf.Min(eSpawners.Count, maxSpawners));
             for (int i = 0; i < randSpawners; i++)
             {
                 ESpawner s = eSpawners[Random.Range(0, eSpawners.Count)];

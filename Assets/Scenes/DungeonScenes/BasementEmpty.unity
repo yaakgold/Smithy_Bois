@@ -522,6 +522,8 @@ MonoBehaviour:
   Height: 9
   x: 0
   y: 0
+  minSpawners: 3
+  maxSpawners: 8
   enemiesInRoom: []
   eSpawners:
   - {fileID: 8556698729998923444}
@@ -854,6 +856,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_Name
       value: EnemySpawner (6)
       objectReference: {fileID: 0}
@@ -1046,11 +1052,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556698729845098909, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.91
+      value: -4.06
       objectReference: {fileID: 0}
     - target: {fileID: 8556698729845098909, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.23
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 8556698729845098909, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1084,6 +1090,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_Name
       value: EnemySpawner (7)
@@ -1123,11 +1133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556698729845098909, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.7
+      value: 6.46
       objectReference: {fileID: 0}
     - target: {fileID: 8556698729845098909, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.23
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8556698729845098909, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1161,6 +1171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_Name
       value: EnemySpawner (3)
@@ -1238,6 +1252,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_Name
       value: EnemySpawner (1)
@@ -1706,6 +1724,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_Name
       value: EnemySpawner (5)
       objectReference: {fileID: 0}
@@ -1782,6 +1804,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_Name
       value: EnemySpawner (2)
@@ -1903,11 +1929,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556698729845098909, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.08
+      value: 1.44
       objectReference: {fileID: 0}
     - target: {fileID: 8556698729845098909, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9
+      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 8556698729845098909, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1941,6 +1967,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_Name
       value: EnemySpawner (4)
@@ -2018,6 +2048,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 8556698729845098910, guid: 43e2939f53122ec419e160db3d39ef16, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
