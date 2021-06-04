@@ -207,6 +207,8 @@ public class Room : MonoBehaviour
         {
             RoomController.instance.OnPlayerEnterRoom(this);
 
+            if (eSpawners.Count < 3)
+                return;
             int randSpawners = Random.Range(3, eSpawners.Count);
             for (int i = 0; i < randSpawners; i++)
             {
