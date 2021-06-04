@@ -18,7 +18,7 @@ public class Coin : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             //Add to some total somewhere
-            //collision.GetComponent<Player>().//TotalCoins += amount;
+            collision.GetComponent<Player>().Coins += amount;
 
             //Currency noise
             AudioManager.Instance.Play("Coin Pickup");

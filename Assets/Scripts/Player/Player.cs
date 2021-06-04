@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
     public Transform attackPoint;
     public bool weaponActive;
     public Weapon weapon = new Weapon();
-    public int Coins { set { coinsTxt.text = $"Coins: {value}"; } }
+    private int _coins;
+    public int Coins { get { return _coins;  } set { _coins = value; coinsTxt.text = $"Coins: {_coins}"; } }
 
     public float Speed { get; set; } = 5.0f;
     public float Strength { get; set; } = 1.0f;
