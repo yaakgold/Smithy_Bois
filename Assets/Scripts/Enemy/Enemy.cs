@@ -143,7 +143,7 @@ public class Enemy : MonoBehaviour
     {
         if(target)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>().Fire(fireSpeed, target.position, strength, target.tag, tag);
+            Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>().Fire(fireSpeed, target.pos, strength, target.tag, tag);
             AudioManager.Instance.Play($"{enemyName} Attack");
         }
     }
