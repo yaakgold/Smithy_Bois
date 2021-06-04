@@ -651,6 +651,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6596089759184751683}
     - target: {fileID: 7708896154076622498, guid: df50a2e8627a0a247addd9c176cdd90e, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7874068756059198057, guid: bf71e0241d6518c43a292c2d81940e5b, type: 3}
+    - target: {fileID: 7708896154076622498, guid: df50a2e8627a0a247addd9c176cdd90e, type: 3}
       propertyPath: flamethrower
       value: 
       objectReference: {fileID: 1688743035504334742}
@@ -3016,6 +3020,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drill
       objectReference: {fileID: 0}
+    - target: {fileID: 3263064121824539777, guid: 905be7d6a9f366843baafca043433cf4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263064121824539779, guid: 905be7d6a9f366843baafca043433cf4, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1642669120}
+    - target: {fileID: 3263064121824539779, guid: 905be7d6a9f366843baafca043433cf4, type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263064121824539779, guid: 905be7d6a9f366843baafca043433cf4, type: 3}
+      propertyPath: attackSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263064121824539779, guid: 905be7d6a9f366843baafca043433cf4, type: 3}
+      propertyPath: strengthModifier
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905be7d6a9f366843baafca043433cf4, type: 3}
 --- !u!1 &3263064121227645138 stripped
@@ -3049,6 +3073,10 @@ PrefabInstance:
     - target: {fileID: 3849868437461656704, guid: 9f073e7941fcd7641b967d9532e3f374, type: 3}
       propertyPath: m_Name
       value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849868437461656704, guid: 9f073e7941fcd7641b967d9532e3f374, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3849868437461656705, guid: 9f073e7941fcd7641b967d9532e3f374, type: 3}
       propertyPath: m_RootOrder
@@ -3131,6 +3159,10 @@ PrefabInstance:
     - target: {fileID: 6596089760260944612, guid: f2c5dfdc60dabd44195103661328852d, type: 3}
       propertyPath: m_Name
       value: Pickaxe
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596089760260944612, guid: f2c5dfdc60dabd44195103661328852d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6596089760260944613, guid: f2c5dfdc60dabd44195103661328852d, type: 3}
       propertyPath: m_RootOrder
