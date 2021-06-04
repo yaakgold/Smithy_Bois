@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -11,17 +13,24 @@ public class Player : MonoBehaviour
     public Transform attackPoint;
     public bool weaponActive;
     public Weapon weapon = new Weapon();
+    public int Coins { set { coinsTxt.text = $"Coins: {value}"; } }
 
     public float Speed { get; set; } = 5.0f;
     public float Strength { get; set; } = 1.0f;
 
     private float attackReach = 2.0f;
     private float attackSpeed = 2.0f;
+    private float timeSinceLastAttack = 0;
     private Vector3 playerDirection;
+
+    public Slider attackRechargeBar;
+    public Slider healthBar;
+    public TMP_Text coinsTxt;
 
     void Start()
     {
         health.OnDeath.AddListener(Die);
+        health.OnHit.AddListener(OnHit);
 
         if(drill)
             drill.SetActive(false);
@@ -42,9 +51,14 @@ public class Player : MonoBehaviour
     {
         playerDirection = Vector3.zero;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Attack();
+        attackRechargeBar.value = timeSinceLastAttack / attackSpeed;
+        timeSinceLastAttack -= Time.deltaTime;
+        if (timeSinceLastAttack <= 0) {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Attack();
+                timeSinceLastAttack = attackSpeed;
+            }
         }
      
         playerDirection.x = Input.GetAxis("Horizontal");
@@ -149,5 +163,10 @@ public class Player : MonoBehaviour
     {
         //add stuff here for visuals :)
         Destroy(gameObject);
+    }
+
+    public void OnHit()
+    {
+        healthBar.value = health.currentHealth / health.maxHealth;
     }
 }
