@@ -9,14 +9,14 @@ public class Projectile : MonoBehaviour
     public string tagHit, tagIgnore;
     public float speed;
 
-    public void Fire(float _speed, Transform target, float _damage, string tagOfObjectToHit, string tagOfObjectToIgnore)
+    public void Fire(float _speed, Vector2 target, float _damage, string tagOfObjectToHit, string tagOfObjectToIgnore)
     {
         damage = _damage;
         tagHit = tagOfObjectToHit;
         tagIgnore = tagOfObjectToIgnore;
         speed = _speed;
 
-        GetComponent<Rigidbody2D>().AddForce((target.position - transform.position).normalized * speed, ForceMode2D.Impulse);
+        GetComponent<Rigidbody2D>().AddForce((position - transform.position).normalized * speed, ForceMode2D.Impulse);
     }
 
     private void Update()
