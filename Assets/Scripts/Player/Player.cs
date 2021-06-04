@@ -13,19 +13,29 @@ public class Player : MonoBehaviour
     public Transform attackPoint;
     public bool weaponActive;
     public Weapon weapon = new Weapon();
-    public int Coins { set { coinsTxt.text = $"Coins: {value}"; } }
+    private int _coins;
+    public int Coins { get { return _coins;  } set { _coins = value; coinsTxt.text = $"Coins: {_coins}"; } }
 
     public float Speed { get; set; } = 5.0f;
     public float Strength { get; set; } = 1.0f;
 
     private float attackReach = 2.0f;
+<<<<<<< HEAD
     private float attackSpeed = 1.0f;
+=======
+    private float attackSpeed = .5f;
+>>>>>>> b7d7fe08bcd61a3632cda46566f5cf106a875454
     private float timeSinceLastAttack = 0;
     private Vector3 playerDirection;
 
     public Slider attackRechargeBar;
     public Slider healthBar;
     public TMP_Text coinsTxt;
+
+    public GameObject winPanel;
+    public TMP_Text coinWinText;
+    public GameObject deathPanel;
+    public TMP_Text coinDeathText;
 
     void Start()
     {
@@ -161,12 +171,20 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        //add stuff here for visuals :)
+        deathPanel.SetActive(true);
+        coinDeathText.text = $"At least you found {_coins} coins in the dungeons.";
+
         Destroy(gameObject);
     }
 
     public void OnHit()
     {
         healthBar.value = health.currentHealth / health.maxHealth;
+    }
+
+    public void WinScreen()
+    {
+        winPanel.SetActive(true);
+        coinWinText.text = $"You were able to find {_coins} coins along the way. Congrats!";
     }
 }
