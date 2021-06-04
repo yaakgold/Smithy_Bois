@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     public bool isBoss;
     public GameObject particleAttack;
     public Transform particleLocation;
+    public List<GameObject> coins;
 
     private bool deathAdded;
 
@@ -125,7 +126,13 @@ public class Enemy : MonoBehaviour
         if(isBoss)
         {
             //TODO: Something for when the player wins
-            print("YOU WIN");
+            
+            //automatically give player X number of coins
+        }
+        else
+        {
+            //If not boss, drop a coin
+            Instantiate(coins[UnityEngine.Random.Range(1, coins.Count)], transform.position, Quaternion.identity);
         }
 
         //Remove the gameobject from existence

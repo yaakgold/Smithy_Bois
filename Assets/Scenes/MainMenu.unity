@@ -690,8 +690,7 @@ AudioSource:
   m_GameObject: {fileID: 125397771}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 6df92173dc380bd4cbc862f69801932c,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 6df92173dc380bd4cbc862f69801932c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 12ae70e824ace8b42906458ad22188c9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -964,6 +963,11 @@ MonoBehaviour:
     vol: 1
     pitch: 1
     source: {fileID: 0}
+  - name: Coin Pickup
+    clip: {fileID: 8300000, guid: 6a0deb679b51c5644807b2a0ddc3ff2c, type: 3}
+    vol: 1
+    pitch: 1
+    source: {fileID: 0}
   - name: Zombie Attack
     clip: {fileID: 8300000, guid: 640994911e732a4429d4edf0595270c0, type: 3}
     vol: 0.5
@@ -1054,7 +1058,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: [{fileID: 125397773}]
+  m_Children:
+  - {fileID: 125397773}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
