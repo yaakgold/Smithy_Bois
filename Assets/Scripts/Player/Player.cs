@@ -45,7 +45,6 @@ public class Player : MonoBehaviour
         {
             Attack();
         }
-
      
         playerDirection.x = Input.GetAxis("Horizontal");
         playerDirection.y = Input.GetAxis("Vertical");
@@ -58,33 +57,37 @@ public class Player : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "Drill")
+        if(collision.gameObject.name.Contains("Drill"))
         {
             if(Input.GetKeyDown(KeyCode.E) && !weaponActive)
             {
                 drill.SetActive(true);
                 weaponActive = true;
+                weapon.type = Weapon.eWeaponType.Drill;
             }
-        } else if(collision.gameObject.name == "Flamethrower")
+        } else if(collision.gameObject.name.Contains("Flamethrower"))
         {
             if(Input.GetKeyDown(KeyCode.E) && !weaponActive)
             {
                 flamethrower.SetActive(true);
                 weaponActive = true;
+                weapon.type = Weapon.eWeaponType.Flamethrower;
             }
-        } else if(collision.gameObject.name == "Pickaxe")
+        } else if(collision.gameObject.name.Contains("Pickaxe"))
         {
             if(Input.GetKeyDown(KeyCode.E) && !weaponActive)
             {
                 pickaxe.SetActive(true);
                 weaponActive = true;
+                weapon.type = Weapon.eWeaponType.Pickaxe;
             }
-        } else if(collision.gameObject.name == "Sword")
+        } else if(collision.gameObject.name.Contains("Sword"))
         {
             if(Input.GetKeyDown(KeyCode.E) && !weaponActive)
             {
                 sword.SetActive(true);
                 weaponActive = true;
+                weapon.type = Weapon.eWeaponType.Sword;
             }
         }
     }
@@ -118,23 +121,5 @@ public class Player : MonoBehaviour
     {
         //add stuff here for visuals :)
         Destroy(gameObject);
-    }
-
-    public void ChooseWeapon(Weapon weapon)
-    {
-        switch (weapon.type)
-        {
-            case Weapon.eWeaponType.Drill:
-
-                break;
-            case Weapon.eWeaponType.Flamethrower:
-                break;
-            case Weapon.eWeaponType.Pickaxe:
-                break;
-            case Weapon.eWeaponType.Sword:
-                break;
-            default:
-                break;
-        }
     }
 }
