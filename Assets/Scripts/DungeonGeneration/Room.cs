@@ -206,9 +206,18 @@ public class Room : MonoBehaviour
         if(other.tag == "Player")
         {
             RoomController.instance.OnPlayerEnterRoom(this);
-            foreach (var item in eSpawners)
+
+            if (eSpawners.Count < 3)
+                return;
+            int randSpawners = Random.Range(3, eSpawners.Count);
+            for (int i = 0; i < randSpawners; i++)
             {
-                item.isChosen = true;
+                ESpawner s = eSpawners[Random.Range(0, eSpawners.Count)];
+                while (!s.canSpawn)
+                {
+                    s = eSpawners[Random.Range(0, eSpawners.Count)];
+                }
+                s.isChosen = true;
             }
         }
     }

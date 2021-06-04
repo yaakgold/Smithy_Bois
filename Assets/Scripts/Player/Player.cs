@@ -6,10 +6,14 @@ public class Player : MonoBehaviour
 {
     public Animator animator;
     public Health health;
+    public GameObject drill, flamethrower, pickaxe, sword;
+    public Transform attackPoint;
+    public bool weaponActive;
     public Weapon weapon = new Weapon();
+
     public float Speed { get; set; } = 5.0f;
     public float Strength { get; set; } = 1.0f;
-    public Transform attackPoint;
+
     private float attackReach = 2.0f;
     private float attackSpeed = 2.0f;
     private Vector3 playerDirection;
@@ -17,6 +21,13 @@ public class Player : MonoBehaviour
     void Start()
     {
         health.OnDeath.AddListener(Die);
+
+        drill.SetActive(false);
+        flamethrower.SetActive(false);
+        pickaxe.SetActive(false);
+        sword.SetActive(false);
+
+        weaponActive = false;
     }
 
     void Update()
@@ -37,6 +48,39 @@ public class Player : MonoBehaviour
         transform.position += velocity * Time.deltaTime;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.name == "Drill")
+        {
+            if(Input.GetKeyDown(KeyCode.E) && !weaponActive)
+            {
+                drill.SetActive(true);
+                weaponActive = true;
+            }
+        } else if(collision.gameObject.name == "Flamethrower")
+        {
+            if(Input.GetKeyDown(KeyCode.E) && !weaponActive)
+            {
+                flamethrower.SetActive(true);
+                weaponActive = true;
+            }
+        } else if(collision.gameObject.name == "Pickaxe")
+        {
+            if(Input.GetKeyDown(KeyCode.E) && !weaponActive)
+            {
+                pickaxe.SetActive(true);
+                weaponActive = true;
+            }
+        } else if(collision.gameObject.name == "Sword")
+        {
+            if(Input.GetKeyDown(KeyCode.E) && !weaponActive)
+            {
+                sword.SetActive(true);
+                weaponActive = true;
+            }
+        }
+    }
+
     public void Attack()
     {
         //play attack animation
@@ -48,6 +92,9 @@ public class Player : MonoBehaviour
             if(enemy.TryGetComponent(out Health h) && enemy.gameObject != gameObject)
             {
                 h.TakeDamage(Strength);
+
+                if(weapon != null)
+                    AudioManager.Instance.Play($"{weapon.type} Hit");
             }
         }
 

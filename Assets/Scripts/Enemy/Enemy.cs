@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     public Room room;
     public GameObject projectile;
     public float fireSpeed;
+    public string enemyName;
 
     private bool deathAdded;
 
@@ -102,6 +103,7 @@ public class Enemy : MonoBehaviour
 
     public void GetHit()
     {
+        AudioManager.Instance.Play($"{enemyName} Get Hit");
         anim.SetTrigger("GetHit");
     }
 
@@ -112,6 +114,9 @@ public class Enemy : MonoBehaviour
         //Remove the gameobject from the list in the room
         room.enemiesInRoom.Remove(gameObject);
 
+        //Play death audio
+        AudioManager.Instance.Play($"{enemyName} Die");
+
         //Remove the gameobject from existence
         Destroy(gameObject);
     }
@@ -120,6 +125,7 @@ public class Enemy : MonoBehaviour
     {
         //Do damage (maybe do a check thing to make sure you hit the player?
         target.GetComponent<Player>().health.TakeDamage(strength);
+        AudioManager.Instance.Play($"{enemyName} Attack");
     }
 
     public void RobotThrow()
@@ -127,6 +133,7 @@ public class Enemy : MonoBehaviour
         if(target)
         {
             Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>().Fire(fireSpeed, target, strength, target.tag, tag);
+            AudioManager.Instance.Play($"{enemyName} Attack");
         }
     }
 }
