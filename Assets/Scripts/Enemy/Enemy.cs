@@ -150,6 +150,6 @@ public class Enemy : MonoBehaviour
 
     public void CreateParticles()
     {
-        Instantiate(particleAttack, particleLocation.position, Quaternion.identity);
+        Destroy(Instantiate(particleAttack, particleLocation.position, particleAttack.transform.rotation), 2);
     }
 }

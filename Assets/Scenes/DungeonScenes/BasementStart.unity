@@ -212,10 +212,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620528647}
     m_Modifications:
-    - target: {fileID: 1688743034917737796, guid: 8018e3b3e7db06944b0ea6fcd9c3c32b, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1688743034917737797, guid: 8018e3b3e7db06944b0ea6fcd9c3c32b, type: 3}
       propertyPath: m_Name
       value: Flamethrower
@@ -262,18 +258,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1688743034917737799, guid: 8018e3b3e7db06944b0ea6fcd9c3c32b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5749423354846962854, guid: 8018e3b3e7db06944b0ea6fcd9c3c32b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5749423354846962854, guid: 8018e3b3e7db06944b0ea6fcd9c3c32b, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5749423354846962854, guid: 8018e3b3e7db06944b0ea6fcd9c3c32b, type: 3}
-      propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -595,8 +579,11 @@ MonoBehaviour:
   Height: 9
   x: 0
   y: 0
+  minSpawners: 0
+  maxSpawners: 0
   enemiesInRoom: []
   eSpawners: []
+  weapons: []
   leftDoor: {fileID: 176129337}
   rightDoor: {fileID: 1474153824}
   topDoor: {fileID: 1382704251}
@@ -1137,10 +1124,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickaxe
       objectReference: {fileID: 0}
-    - target: {fileID: 6596089760260944612, guid: f2c5dfdc60dabd44195103661328852d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6596089760260944613, guid: f2c5dfdc60dabd44195103661328852d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1246,10 +1229,6 @@ PrefabInstance:
     - target: {fileID: 3263064121824539777, guid: 905be7d6a9f366843baafca043433cf4, type: 3}
       propertyPath: m_Name
       value: Drill
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263064121824539777, guid: 905be7d6a9f366843baafca043433cf4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905be7d6a9f366843baafca043433cf4, type: 3}
@@ -1412,10 +1391,6 @@ PrefabInstance:
     - target: {fileID: 3849868437461656704, guid: 9f073e7941fcd7641b967d9532e3f374, type: 3}
       propertyPath: m_Name
       value: Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 3849868437461656704, guid: 9f073e7941fcd7641b967d9532e3f374, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3849868437461656705, guid: 9f073e7941fcd7641b967d9532e3f374, type: 3}
       propertyPath: m_RootOrder

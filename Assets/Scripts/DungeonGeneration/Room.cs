@@ -14,6 +14,7 @@ public class Room : MonoBehaviour
 
     public List<GameObject> enemiesInRoom = new List<GameObject>();
     public List<ESpawner> eSpawners = new List<ESpawner>();
+    public GameObject[] weapons;
 
     private bool updatedDoors = false;
 
