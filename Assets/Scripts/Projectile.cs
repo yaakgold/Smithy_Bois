@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
         tagIgnore = tagOfObjectToIgnore;
         speed = _speed;
 
-        GetComponent<Rigidbody2D>().AddForce((position - transform.position).normalized * speed, ForceMode2D.Impulse);
+        GetComponent<Rigidbody2D>().AddForce(((Vector3)target - transform.position).normalized * speed, ForceMode2D.Impulse);
     }
 
     private void Update()
