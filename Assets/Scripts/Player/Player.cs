@@ -128,7 +128,7 @@ public class Player : MonoBehaviour
 
     public void DrillShoot()
     {
-        Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>().Fire(attackSpeed, attackPoint, Strength, "Enemy", "Player");
+        Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>().Fire(attackSpeed, Camera.main.ScreenToWorldPoint(Input.mousePosition), Strength, "Enemy", "Player");
         AudioManager.Instance.Play("Drill Attack");
     }
 
