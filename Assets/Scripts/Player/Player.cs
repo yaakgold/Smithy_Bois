@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
             Attack();
         }
 
+     
         playerDirection.x = Input.GetAxis("Horizontal");
         playerDirection.y = Input.GetAxis("Vertical");
         animator.SetFloat("MoveX", playerDirection.x);
@@ -55,7 +56,7 @@ public class Player : MonoBehaviour
         transform.position += velocity * Time.deltaTime;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.gameObject.name == "Drill")
         {
