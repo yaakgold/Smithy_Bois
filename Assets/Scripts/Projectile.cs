@@ -17,6 +17,7 @@ public class Projectile : MonoBehaviour
         speed = _speed;
 
         GetComponent<Rigidbody2D>().AddForce(((Vector3)target - transform.position).normalized * speed, ForceMode2D.Impulse);
+        Destroy(gameObject, 15);
     }
 
     private void Update()
